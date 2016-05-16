@@ -1,4 +1,4 @@
-require_relative '03_associatable'
+require_relative 'associatable'
 
 module Associatable
 
@@ -15,8 +15,8 @@ module Associatable
       source_pk = source_options.primary_key
       source_fk = source_options.foreign_key
 
-      key_val = self.send(through_fk)
-      results = DBConnection.execute(<<-SQL, key_val)
+      key_value = self.send(through_fk)
+      data = DBConnection.execute(<<-SQL, key_value)
         SELECT
           #{source_table}.*
         FROM
@@ -29,7 +29,7 @@ module Associatable
           #{through_table}.#{through_pk} = ?
       SQL
 
-      source_options.model_class.parse_all(results).first
+      source_options.model_class.parse_all(data).first
     end
   end
 end

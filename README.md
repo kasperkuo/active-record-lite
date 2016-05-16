@@ -63,4 +63,10 @@ def belongs_to(name, options = {})
   end
 end
 ```
-These methods use metaprogramming to help query the database to filter out specific results based on the table name. It essentially takes the `assoc_options` hash and extracts the foreign key. When querying the database, it uses the `where` method to match any foreign key with the primary key. 
+These methods use metaprogramming to help query the database to filter out specific results based on the table name. It essentially takes the `assoc_options` hash and extracts the foreign key. When querying the database, it uses the `where` method to match any foreign key with the primary key.
+
+## Future Implementations
+
+- Validation methods
+- `has_many :through` associations that allows us to create join tables
+- `includes` and `joins` methods

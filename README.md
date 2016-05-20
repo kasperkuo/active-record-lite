@@ -4,7 +4,7 @@ NAME is a custom object-relational mapping (ORM) tool used to query the database
 
 ## Functionality
 
-NAME wraps SQL objects in Ruby to allow for object oriented programming. The SQL object has a `SQLObject::all` method that queries the database and returns all objects from a specific table `self.table_name`.
+NAME wraps SQL objects in Ruby to allow for object oriented programming. The SQL object has a `SQLObject::all` method that queries the database and returns all objects from a specific table `self.table_name`
 
 ```
 def self.all
